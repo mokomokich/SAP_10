@@ -20,10 +20,18 @@ namespace SAP_10.Controllers
         }
 
         // GET: Documents
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             var applicationDbContext = _context.Document.Include(d => d.Sotrydnik).Include(d => d.Vacation);
             return View(await applicationDbContext.ToListAsync());
+
+            string Sotrud = _context.Sotrydnik.FirstOrDefault(t => t.SotrydnikId == id).FIO;
+            ViewBag.Sotrud = Sotrud;
+            ViewBag.SotrudId = id;
         }
 
         // GET: Documents/Details/5
