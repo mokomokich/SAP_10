@@ -15,6 +15,6 @@ namespace SAP_10.Data
         }
         public DbSet<Sotrydnik> Sotrydnik { get; set; }
         public DbSet<Vacation> Vacation { get; set; }
-        //public DbSet<Spisanies> Spisanies { get; set; }
+        public DbSet<Document> Document { get; set; }
     }
 }

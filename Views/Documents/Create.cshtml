@@ -1,0 +1,56 @@
+﻿@model SAP_10.Models.Document
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Document</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="code_document" class="control-label"></label>
+                <input asp-for="code_document" class="form-control" />
+                <span asp-validation-for="code_document" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="registration_date" class="control-label"></label>
+                <input asp-for="registration_date" class="form-control" />
+                <span asp-validation-for="registration_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="holiday_start_date" class="control-label"></label>
+                <input asp-for="holiday_start_date" class="form-control" />
+                <span asp-validation-for="holiday_start_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="holiday_end_date" class="control-label"></label>
+                <input asp-for="holiday_end_date" class="form-control" />
+                <span asp-validation-for="holiday_end_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="F_Code_Vacation" class="control-label"></label>
+                <select asp-for="F_Code_Vacation" class ="form-control" asp-items="ViewBag.F_Code_Vacation"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="F_Code_Sotrydnik" class="control-label"></label>
+                <select asp-for="F_Code_Sotrydnik" class ="form-control" asp-items="ViewBag.F_Code_Sotrydnik"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SAP_10.Models.Document>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.code_document)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.registration_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holiday_start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holiday_end_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vacation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrydnik)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.code_document)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.registration_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.holiday_start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.holiday_end_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vacation.VacationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sotrydnik.SotrydnikId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DocumentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DocumentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DocumentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
