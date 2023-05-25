@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SAP_10.Models.Sotrydnik>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patronymic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.job_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subdivision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employment_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patronymic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.job_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subdivision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employment_date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SotrydnikId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SotrydnikId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SotrydnikId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

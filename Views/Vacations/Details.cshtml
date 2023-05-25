@@ -1,0 +1,36 @@
+﻿@model SAP_10.Models.Vacation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vacation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.vacation_type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.vacation_type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.vacation_pay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.vacation_pay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.holiday_benefits)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.holiday_benefits)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VacationId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
