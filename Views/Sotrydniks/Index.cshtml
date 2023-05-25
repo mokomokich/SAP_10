@@ -41,6 +41,7 @@
                 @Html.DisplayFor(modelItem => item.employment_date)
             </td>
             <td>
+                    <a asp-controller="Documents" asp-action="Index" asp-route-id="@item.SotrydnikId">Документ</a> |
                 <a asp-action="Edit" asp-route-id="@item.SotrydnikId">Редактировать</a> |
                 <a asp-action="Details" asp-route-id="@item.SotrydnikId">Просмотр</a> |
                 <a asp-action="Delete" asp-route-id="@item.SotrydnikId">Удалить</a>
